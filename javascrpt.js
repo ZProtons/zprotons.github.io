@@ -1,1 +1,1 @@
-alert("Misoratore")
+document.body.innerHTML = "IT WORKS!!!";
