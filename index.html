@@ -1,10 +1,55 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
-    </head>
-<body>
-    <a href = "page2.html"> Click here to watch videos </a>
-<script type="module" src="java.js"></script>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- CSS File -->
+    <link rel="stylesheet" href="styles/index.css" />
+    <title>Youtube Clone with HTML & CSS</title>
+  </head>
+  <body>
+      <header class="header">.</header>
+      <main>
+          <div class="side-bar">.</div>
+          <div class="content">.</div>
+      </main>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+      /* header section*/
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 15px;
+  } 
+  main {
+    height: calc(100vh - 70px);
+    display: flex;
+    background-color: #f9f9f9;
+  }            
+  /* Sidebar */ 
+.side-bar {
+    height: 100%;
+    width: 17%;
+    background-color: white;
+    overflow-y: hidden;
+  } 
+  @media (max-width: 768px) {
+    .side-bar {
+      display: none;
+    }
+  }
+      <a href = "page2.html"> Click here to watch videos </a>
+  <!-- Main Body Ends -->
 </body>
 </html>
