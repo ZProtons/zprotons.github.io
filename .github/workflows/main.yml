@@ -1,0 +1,16 @@
+name: CI
+
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Download
+      run: wget https://cloudron.io/cloudron-setup 
+    - name: Changing Permissions
+      run: chmod +x ./cloudron-setup 
+    - name: Installing
+      run: ./cloudron-setup --provider generic
