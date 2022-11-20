@@ -15,7 +15,7 @@ jobs:
     - name: Installing nginx
       run: sudo apt purge nginx nginx-common nginx-core
     - name: Installing docker (1/2)
-      run: sudo apt install -y containerd docker docker.io
+      run: sudo apt install -y runc containerd docker docker.io
     - name: Installing nodejs
       run: sudo apt install nodejs
     - name: Installing
