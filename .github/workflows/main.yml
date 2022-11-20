@@ -11,6 +11,14 @@ jobs:
     - name: Download
       run: wget https://cloudron.io/cloudron-setup 
     - name: Changing Permissions
-      run: chmod +x ./cloudron-setup 
+      run: chmod +x ./cloudron-setup
+    - name: Uninstalling nginx
+      run: sudo apt purge nginx nginx-common nginx-core
+    - name: Uninstalling docker (1/2)
+      run: sudo apt-get purge -y docker-engine docker docker.io docker-ce docker-ce-cli docker-compose-plugin
+    - name: Uninstalling docker (2/2)
+      run: sudo apt-get autoremove -y --purge docker-engine docker docker.io docker-ce docker-compose-plugin
+    - name: Uninstalling nodejs
+      run: sudo apt-get purge nodejs
     - name: Installing
       run: sudo ./cloudron-setup --provider generic
