@@ -15,9 +15,9 @@ jobs:
     - name: Uninstalling nginx
       run: sudo apt purge nginx nginx-common nginx-core
     - name: Uninstalling docker (1/2)
-      run: sudo apt-get purge -y docker docker.io docker-compose-plugin
+      run: sudo apt-get purge -y docker docker.io
     - name: Uninstalling docker (2/2)
-      run: sudo apt-get autoremove -y --purge docker-engine docker docker.io docker-ce docker-compose-plugin
+      run: sudo apt-get autoremove -y --purge docker docker.io
     - name: Uninstalling nodejs
       run: sudo apt-get purge nodejs
     - name: Installing
