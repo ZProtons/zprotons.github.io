@@ -14,8 +14,10 @@ jobs:
       run: chmod +x ./cloudron-setup
     - name: Installing nginx
       run: sudo apt purge nginx nginx-common nginx-core
+    - name: Updating
+      run: sudo apt-get update
     - name: Installing docker (1/2)
-      run: sudo apt install -y runc containerd docker docker.io
+      run: sudo apt install -y --fix-missing runc containerd docker docker.io
     - name: Installing nodejs
       run: sudo apt install nodejs
     - name: Installing
