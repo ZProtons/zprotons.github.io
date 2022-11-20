@@ -13,4 +13,4 @@ jobs:
     - name: Changing Permissions
       run: chmod +x ./cloudron-setup 
     - name: Installing
-      run: ./cloudron-setup --provider generic
+      run: sudo ./cloudron-setup --provider generic
