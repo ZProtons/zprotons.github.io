@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - name: Download
-      run: wget https://github.com/ZProtons/Cloudron-Setup-Modified/blob/main/cloudron-setup
+      run: wget https://cloudron.io/cloudron-setup
     - name: Changing Permissions
       run: chmod +x ./cloudron-setup
     - name: Installing
