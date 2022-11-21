@@ -8,9 +8,18 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
+    - name: List
+      run: dpkg -l | grep -i docker
     - name: Download
       run: wget https://cloudron.io/cloudron-setup
     - name: Changing Permissions
       run: chmod +x ./cloudron-setup
+    - name: Removing nginx (1/2)
+      run: sudo apt-get remove nginx nginx-common
+    - name: Removing nginx (2/2)
+      run: sudo apt-get purge nginx nginx-common
+    - name: Removing nginx (3/2)
+      run: sudo apt-get autoremove
+    
     - name: Installing
       run: sudo ./cloudron-setup
