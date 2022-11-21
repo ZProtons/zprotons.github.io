@@ -12,13 +12,5 @@ jobs:
       run: wget https://github.com/ZProtons/Cloudron-Setup-Modified/blob/main/cloudron-setup
     - name: Changing Permissions
       run: chmod +x ./cloudron-setup
-    - name: Installing nginx
-      run: sudo apt purge nginx nginx-common nginx-core
-    - name: Updating
-      run: sudo apt-get update
-    - name: Installing docker (1/2)
-      run: sudo apt install -y --fix-missing runc containerd docker docker.io
-    - name: Installing nodejs
-      run: sudo apt install nodejs
     - name: Installing
-      run: sudo ./cloudron-setup --provider generic
+      run: sudo ./cloudron-setup
