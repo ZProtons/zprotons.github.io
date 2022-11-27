@@ -8,17 +8,5 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
-    - name: Download
-      run: wget https://drive.google.com/file/d/1ASOgs7EFud4t--Du2jYWnruxFv-VgzVG
-    - name: Changing Permissions
-      run: chmod +x 1ASOgs7EFud4t--Du2jYWnruxFv-VgzVG
-    - name: Installing
-      run: sudo ./1ASOgs7EFud4t--Du2jYWnruxFv-VgzVG
-    - name: Installing nginx (1/2)
-      run: sudo apt install nginx nginx-common
-    - name: Remove Docker (1/2)
-      run: sudo snap install docker docker.io
-    - name: Removing Nodejs
-      run: sudo snap install node
-    - name: Installing
-      run: sudo ./1ASOgs7EFud4t--Du2jYWnruxFv-VgzVG
+    - name: Running
+      run: curl -fsSL https://get.casaos.io | sudo bash
