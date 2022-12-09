@@ -1,15 +1,1 @@
-name: CI
 
-on: [push, workflow_dispatch]
-
-jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Running
-      run: curl -fsSL https://get.casaos.io | sudo bash
-    - name: Looping
-      run: sleep 180s
-      shell: bash
