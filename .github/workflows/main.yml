@@ -11,5 +11,5 @@ jobs:
       timeout-minutes: 12
     - run: |
         set -x
-        docker logs 10029b35764ccbb3743e41514a5e88a58d185e08b52f86d7caea73e66132a9a5
+        docker logs 3e73b62c2fe470824bf71e1458db78e4fa4905c17315ac315834cc40dedef37c
         
