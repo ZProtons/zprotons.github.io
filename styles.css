@@ -33,11 +33,7 @@ form {
   color: #dc3545;
 }
 
-.image-preview {
-  width: 100%;
-  height: 200px;
-  background-color: #eee;
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
+#product-image {
+  max-width: 100%;
+  margin-top: 10px;
 }

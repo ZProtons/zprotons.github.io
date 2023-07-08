@@ -21,6 +21,12 @@
           <input type="url" class="form-control" id="product-url" name="product-url" required>
           <small class="form-text text-danger d-none" id="url-error">Please enter a valid URL.</small>
         </div>
+
+        <div class="form-group">
+          <label for="contact-phone">Contact Phone Number:</label>
+          <input type="tel" class="form-control" id="contact-phone" name="contact-phone" required>
+          <small class="form-text text-danger d-none" id="phone-error">Please enter a valid phone number.</small>
+        </div>
       
         <div class="form-group">
           <label for="quantity">Quantity:</label>
@@ -33,14 +39,9 @@
           <small class="form-text text-danger d-none" id="address-error">Please enter a valid address.</small>
         </div>
         
-        <div class="form-group">
-          <label for="contact-phone">Contact Phone Number:</label>
-          <input type="tel" class="form-control" id="contact-phone" name="contact-phone" required>
-        </div>
-        
-        <div class="form-group">
+        <div id="product-preview" class="form-group d-none">
           <label for="product-image">Product Image:</label>
-          <div class="image-preview"></div>
+          <img src="#" alt="Product Image" id="product-image" class="img-fluid">
         </div>
       
         <div class="form-group text-center">
@@ -57,7 +58,6 @@
   </section>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script src="script.js"></script>
 </body>

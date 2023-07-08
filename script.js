@@ -4,17 +4,24 @@ $(document).ready(function() {
 
     // Reset error messages
     $('#url-error').addClass('d-none');
+    $('#phone-error').addClass('d-none');
     $('#address-error').addClass('d-none');
 
     // Get form values
     var productUrl = $('#product-url').val();
+    var phoneNumber = $('#contact-phone').val();
     var quantity = $('#quantity').val();
     var shippingAddress = $('#shipping-address').val();
-    var contactPhone = $('#contact-phone').val();
 
     // Check if URL is valid
     if (!isValidUrl(productUrl)) {
       $('#url-error').removeClass('d-none');
+      return;
+    }
+
+    // Check if phone number is valid
+    if (!isValidPhoneNumber(phoneNumber)) {
+      $('#phone-error').removeClass('d-none');
       return;
     }
 
@@ -28,9 +35,22 @@ $(document).ready(function() {
 
     // Example: Log the form values to the console
     console.log('Product URL:', productUrl);
+    console.log('Contact Phone Number:', phoneNumber);
     console.log('Quantity:', quantity);
     console.log('Shipping Address:', shippingAddress);
-    console.log('Contact Phone Number:', contactPhone);
+
+    // Extract metadata and display product image
+    extractMetadata(productUrl)
+      .then(function(metadata) {
+        // Display product image
+        if (metadata.image) {
+          $('#product-image').attr('src', metadata.image);
+          $('#product-preview').removeClass('d-none');
+        }
+      })
+      .catch(function(error) {
+        console.error('Error extracting metadata:', error);
+      });
 
     // Simulating a successful order placement
     // You can replace this with your own logic to submit the order to the server
@@ -57,6 +77,13 @@ $(document).ready(function() {
     }
   }
 
+  // Function to validate phone number
+  function isValidPhoneNumber(phoneNumber) {
+    // Add your phone number validation logic here
+    // This is just a placeholder
+    return phoneNumber.trim() !== '';
+  }
+
   // Function to validate address
   function isValidAddress(address) {
     // Add your address validation logic here
@@ -64,27 +91,22 @@ $(document).ready(function() {
     return address.trim() !== '';
   }
 
-  // Function to extract product image from URL
-  function extractProductImage(url) {
-    axios.get('https://sultankosen.pythonanywhere.com/scrape?url=' + encodeURIComponent(url))
-      .then(function(response) {
-        var image = response.data.image;
+  // Function to extract metadata from URL
+  function extractMetadata(url) {
+    return new Promise(function(resolve, reject) {
+      var image = new Image();
 
-        // Display the product image
-        $('.image-preview').css('background-image', 'url(' + image + ')');
-      })
-      .catch(function(error) {
-        console.log('Error fetching URL:', error);
-      });
+      image.onload = function() {
+        resolve({
+          image: url,
+        });
+      };
+
+      image.onerror = function() {
+        reject(new Error('Failed to load image'));
+      };
+
+      image.src = url;
+    });
   }
-
-  // Listen for changes in the product URL field
-  $('#product-url').on('input', function() {
-    var url = $(this).val();
-    if (isValidUrl(url)) {
-      extractProductImage(url);
-    } else {
-      $('.image-preview').css('background-image', 'none');
-    }
-  });
 });
