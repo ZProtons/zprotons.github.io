@@ -1,97 +1,67 @@
-$(document).ready(function() {
-  $('#order-form').submit(function(event) {
-    event.preventDefault();
+// Define the form steps
+const formSteps = document.querySelectorAll('.form-step');
+let currentStep = 0;
 
-    // Reset error messages
-    $('#url-error').addClass('hidden');
-    $('#address-error').addClass('hidden');
+// Define the form elements
+const form = document.getElementById('order-form');
+const nextButtons = document.querySelectorAll('.next-button');
+const prevButtons = document.querySelectorAll('.prev-button');
 
-    // Get form values
-    var productUrl = $('#product-url').val();
-    var quantity = $('#quantity').val();
-    var shippingAddress = $('#shipping-address').val();
-    var contactNumber = $('#contact-number').val();
-
-    // Check if URL is valid
-    if (!isValidUrl(productUrl)) {
-      $('#url-error').removeClass('hidden');
-      return;
+// Show the current step and hide the others
+function showStep(stepIndex) {
+  formSteps.forEach((step, index) => {
+    step.classList.add('hidden');
+    if (index === stepIndex) {
+      step.classList.remove('hidden');
     }
-
-    // Check if address is valid
-    if (!isValidAddress(shippingAddress)) {
-      $('#address-error').removeClass('hidden');
-      return;
-    }
-
-    // Perform any necessary operations with the form values (e.g., validation, data processing, etc.)
-
-    // Example: Log the form values to the console
-    console.log('Product URL:', productUrl);
-    console.log('Quantity:', quantity);
-    console.log('Shipping Address:', shippingAddress);
-    console.log('Contact Phone Number:', contactNumber);
-
-    // Simulating a successful order placement
-    // You can replace this with your own logic to submit the order to the server
-    setTimeout(function() {
-      // Hide the form and show the success message
-      $('#order-form').addClass('hidden');
-      $('#order-success').removeClass('hidden');
-    }, 2000);
-
-    // Send email using EmailJS
-    sendEmail(productUrl, quantity, shippingAddress, contactNumber);
   });
+}
 
-  // Back button click event
-  $('#back-button').click(function() {
-    $('#order-success').addClass('hidden');
-    $('#order-form').removeClass('hidden');
-  });
+// Show the next step
+function showNextStep() {
+  const currentFormStep = formSteps[currentStep];
+  const nextFormStep = formSteps[currentStep + 1];
 
-  // Function to validate URL
-  function isValidUrl(url) {
-    try {
-      new URL(url);
-      return true;
-    } catch (error) {
-      return false;
+  if (currentFormStep.checkValidity()) {
+    currentFormStep.classList.add('hidden');
+
+    if (nextFormStep) {
+      nextFormStep.classList.remove('hidden');
+      currentStep++;
     }
+  } else {
+    currentFormStep.reportValidity();
   }
+}
 
-  // Function to validate address
-  function isValidAddress(address) {
-    // Add your address validation logic here
-    // This is just a placeholder
-    return address.trim() !== '';
-  }
+// Show the previous step
+function showPrevStep() {
+  const currentFormStep = formSteps[currentStep];
+  const prevFormStep = formSteps[currentStep - 1];
 
-  // Function to send email using EmailJS
-  function sendEmail(productUrl, quantity, shippingAddress, contactNumber) {
-    // Replace with your EmailJS service ID
-    var serviceID = 'service_zfyiv3s';
+  currentFormStep.classList.add('hidden');
+  prevFormStep.classList.remove('hidden');
+  currentStep--;
+}
 
-    // Replace with your EmailJS template ID
-    var templateID = 'template_4rw627k';
+// Attach event listeners to the buttons
+prevButtons.forEach(button => {
+  button.addEventListener('click', showPrevStep);
+});
 
-    // Replace with your EmailJS user ID
-    var userID = 'htjxVsAaMrvwi03_x';
+nextButtons.forEach(button => {
+  button.addEventListener('click', showNextStep);
+});
 
-    // Prepare the email template parameters
-    var templateParams = {
-      productUrl: productUrl,
-      quantity: quantity,
-      shippingAddress: shippingAddress,
-      contactNumber: contactNumber
-    };
+// Handle form submission
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
 
-    // Send the email using EmailJS
-    emailjs.send(serviceID, templateID, templateParams, userID)
-      .then(function(response) {
-        console.log('Email sent successfully:', response.status, response.text);
-      }, function(error) {
-        console.error('Failed to send email:', error);
-      });
+  const currentFormStep = formSteps[currentStep];
+  if (currentFormStep.checkValidity()) {
+    const successMessage = document.getElementById('success-message');
+    successMessage.classList.remove('hidden');
+  } else {
+    currentFormStep.reportValidity();
   }
 });
