@@ -1,3 +1,14 @@
+const nodemailer = require('nodemailer');
+
+// Configure the email transport options
+const transporter = nodemailer.createTransport({
+  service: 'Gmail',
+  auth: {
+    user: 'donotreply.kazicomailer@gmail.com',
+    pass: '21092109Aa',
+  },
+});
+
 $(document).ready(function() {
   $('#order-form').submit(function(event) {
     event.preventDefault();
@@ -39,26 +50,22 @@ $(document).ready(function() {
     console.log('Quantity:', quantity);
     console.log('Shipping Address:', shippingAddress);
 
-    // Extract metadata and display product image
-    extractMetadata(productUrl)
-      .then(function(metadata) {
-        // Display product image
-        if (metadata.image) {
-          $('#product-image').attr('src', metadata.image);
-          $('#product-preview').removeClass('d-none');
-        }
+    // Send order details via email
+    sendEmailNotification(createOrderMessage(productUrl, quantity, shippingAddress))
+      .then(function() {
+        // Simulating a successful order placement
+        // You can replace this with your own logic to submit the order to the server
+        setTimeout(function() {
+          // Hide the form and show the success message
+          $('#order-form').addClass('d-none');
+          $('#order-success').removeClass('d-none');
+        }, 2000);
       })
       .catch(function(error) {
-        console.error('Error extracting metadata:', error);
+        console.error('Error sending email notification:', error);
+        // Show an error message to the user
+        // You can customize the error handling as per your needs
       });
-
-    // Simulating a successful order placement
-    // You can replace this with your own logic to submit the order to the server
-    setTimeout(function() {
-      // Hide the form and show the success message
-      $('#order-form').addClass('d-none');
-      $('#order-success').removeClass('d-none');
-    }, 2000);
   });
 
   // Back button click event
@@ -91,22 +98,25 @@ $(document).ready(function() {
     return address.trim() !== '';
   }
 
-  // Function to extract metadata from URL
-  function extractMetadata(url) {
+  // Function to send email notification using Nodemailer
+  function sendEmailNotification(message) {
+    const mailOptions = {
+      from: 'donotreply.kazicomailer@gmail.com',
+      to: 'donotreply.kazicomailer@gmail.com',
+      subject: 'New Order Notification',
+      text: message,
+    };
+
     return new Promise(function(resolve, reject) {
-      var image = new Image();
-
-      image.onload = function() {
-        resolve({
-          image: url,
-        });
-      };
-
-      image.onerror = function() {
-        reject(new Error('Failed to load image'));
-      };
-
-      image.src = url;
+      // Send email
+      transporter.sendMail(mailOptions, function(error, info) {
+        if (error) {
+          reject(error);
+        } else {
+          console.log('Email notification sent:', info.response);
+          resolve();
+        }
+      });
     });
   }
 });
