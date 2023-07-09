@@ -73,7 +73,7 @@ $(document).ready(function() {
     var serviceID = 'service_zfyiv3s';
 
     // Replace with your EmailJS template ID
-    var templateID = 'YOUR_TEMPLATE_ID';
+    var templateID = 'template_4rw627k';
 
     // Replace with your EmailJS user ID
     var userID = 'htjxVsAaMrvwi03_x';
