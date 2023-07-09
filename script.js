@@ -1,44 +1,26 @@
-const nodemailer = require('nodemailer');
-
-// Configure the email transport options
-const transporter = nodemailer.createTransport({
-  service: 'Gmail',
-  auth: {
-    user: 'donotreply.kazicomailer@gmail.com',
-    pass: '21092109Aa',
-  },
-});
-
 $(document).ready(function() {
   $('#order-form').submit(function(event) {
     event.preventDefault();
 
     // Reset error messages
-    $('#url-error').addClass('d-none');
-    $('#phone-error').addClass('d-none');
-    $('#address-error').addClass('d-none');
+    $('#url-error').addClass('hidden');
+    $('#address-error').addClass('hidden');
 
     // Get form values
     var productUrl = $('#product-url').val();
-    var phoneNumber = $('#contact-phone').val();
     var quantity = $('#quantity').val();
     var shippingAddress = $('#shipping-address').val();
+    var contactNumber = $('#contact-number').val();
 
     // Check if URL is valid
     if (!isValidUrl(productUrl)) {
-      $('#url-error').removeClass('d-none');
-      return;
-    }
-
-    // Check if phone number is valid
-    if (!isValidPhoneNumber(phoneNumber)) {
-      $('#phone-error').removeClass('d-none');
+      $('#url-error').removeClass('hidden');
       return;
     }
 
     // Check if address is valid
     if (!isValidAddress(shippingAddress)) {
-      $('#address-error').removeClass('d-none');
+      $('#address-error').removeClass('hidden');
       return;
     }
 
@@ -46,32 +28,26 @@ $(document).ready(function() {
 
     // Example: Log the form values to the console
     console.log('Product URL:', productUrl);
-    console.log('Contact Phone Number:', phoneNumber);
     console.log('Quantity:', quantity);
     console.log('Shipping Address:', shippingAddress);
+    console.log('Contact Phone Number:', contactNumber);
 
-    // Send order details via email
-    sendEmailNotification(createOrderMessage(productUrl, quantity, shippingAddress))
-      .then(function() {
-        // Simulating a successful order placement
-        // You can replace this with your own logic to submit the order to the server
-        setTimeout(function() {
-          // Hide the form and show the success message
-          $('#order-form').addClass('d-none');
-          $('#order-success').removeClass('d-none');
-        }, 2000);
-      })
-      .catch(function(error) {
-        console.error('Error sending email notification:', error);
-        // Show an error message to the user
-        // You can customize the error handling as per your needs
-      });
+    // Simulating a successful order placement
+    // You can replace this with your own logic to submit the order to the server
+    setTimeout(function() {
+      // Hide the form and show the success message
+      $('#order-form').addClass('hidden');
+      $('#order-success').removeClass('hidden');
+    }, 2000);
+
+    // Send email using EmailJS
+    sendEmail(productUrl, quantity, shippingAddress, contactNumber);
   });
 
   // Back button click event
   $('#back-button').click(function() {
-    $('#order-success').addClass('d-none');
-    $('#order-form').removeClass('d-none');
+    $('#order-success').addClass('hidden');
+    $('#order-form').removeClass('hidden');
   });
 
   // Function to validate URL
@@ -84,13 +60,6 @@ $(document).ready(function() {
     }
   }
 
-  // Function to validate phone number
-  function isValidPhoneNumber(phoneNumber) {
-    // Add your phone number validation logic here
-    // This is just a placeholder
-    return phoneNumber.trim() !== '';
-  }
-
   // Function to validate address
   function isValidAddress(address) {
     // Add your address validation logic here
@@ -98,25 +67,31 @@ $(document).ready(function() {
     return address.trim() !== '';
   }
 
-  // Function to send email notification using Nodemailer
-  function sendEmailNotification(message) {
-    const mailOptions = {
-      from: 'donotreply.kazicomailer@gmail.com',
-      to: 'donotreply.kazicomailer@gmail.com',
-      subject: 'New Order Notification',
-      text: message,
+  // Function to send email using EmailJS
+  function sendEmail(productUrl, quantity, shippingAddress, contactNumber) {
+    // Replace with your EmailJS service ID
+    var serviceID = 'service_zfyiv3s';
+
+    // Replace with your EmailJS template ID
+    var templateID = 'YOUR_TEMPLATE_ID';
+
+    // Replace with your EmailJS user ID
+    var userID = 'htjxVsAaMrvwi03_x';
+
+    // Prepare the email template parameters
+    var templateParams = {
+      productUrl: productUrl,
+      quantity: quantity,
+      shippingAddress: shippingAddress,
+      contactNumber: contactNumber
     };
 
-    return new Promise(function(resolve, reject) {
-      // Send email
-      transporter.sendMail(mailOptions, function(error, info) {
-        if (error) {
-          reject(error);
-        } else {
-          console.log('Email notification sent:', info.response);
-          resolve();
-        }
+    // Send the email using EmailJS
+    emailjs.send(serviceID, templateID, templateParams, userID)
+      .then(function(response) {
+        console.log('Email sent successfully:', response.status, response.text);
+      }, function(error) {
+        console.error('Failed to send email:', error);
       });
-    });
   }
 });
