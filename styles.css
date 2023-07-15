@@ -1,0 +1,193 @@
+/* Bootstrap */
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css');
+
+/* Animate */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+/* Tailwind */
+@import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+
+/* Semantic */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css');
+
+/* Tacit */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/tacit/1.4.1/tacit.min.css');
+
+/* Milligram */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css');
+
+/* Skeleton */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css');
+
+/* Bulma */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css');
+
+/* Magic */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/magic/1.2.0/magic.min.css');
+
+/* Picnic */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/picnic/6.2.1/picnic.min.css');
+
+/* Half Moon */
+@import url('https://cdn.jsdelivr.net/npm/halfmoon@1.1.6/dist/halfmoon.min.css');
+
+/* Fluid */
+@import url('https://cdn.jsdelivr.net/npm/fluid-css/dist/fluid.min.css');
+
+/* CSS Animation */
+@import url('https://csswand.dev/build/csswand.min.css');
+
+/* Pattern.css */
+@import url('https://unpkg.com/pattern.css');
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Hero section styles */
+.hero {
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Website grid styles */
+.website-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  justify-items: center;
+  margin-top: 50px;
+}
+
+.website-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+
+  /* Using Animate.css for animations */
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+.website-item:hover {
+  transform: scale(1.05);
+}
+
+.website-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+
+  /* Using hover.css for hover effects */
+  transition: transform 0.3s ease;
+}
+
+.website-item:hover img {
+  transform: rotate(360deg);
+}
+
+.website-item h3 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Add styles from Bootstrap */
+/* ... */
+
+/* Add styles from Animate */
+/* ... */
+
+/* Add styles from Tailwind */
+/* ... */
+
+/* Add styles from Semantic */
+/* ... */
+
+/* Add styles from Tacit */
+/* ... */
+
+/* Add styles from Milligram */
+/* ... */
+
+/* Add styles from Skeleton */
+/* ... */
+
+/* Add styles from Bulma */
+/* ... */
+
+/* Add styles from Magic */
+/* ... */
+
+/* Add styles from Picnic */
+/* ... */
+
+/* Add styles from Half Moon */
+/* ... */
+
+/* Add styles from Fluid */
+/* ... */
+
+/* Add styles from CSS Animation */
+/* ... */
+
+/* Add styles from Pattern.css */
+/* ... */
