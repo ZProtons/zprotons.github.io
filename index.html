@@ -3,127 +3,156 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website Landing Page</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> <!-- Add Animate.css for animations -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Add Font Awesome for icons -->
-  <link rel="stylesheet" href="styles.css"> <!-- Link your custom CSS file here -->
-
-  <!-- Add any additional external libraries or stylesheets here -->
-  <!-- Add any additional external libraries or stylesheets here -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"> <!-- Add Tailwind CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"> <!-- Add Hover.css for hover effects -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"> <!-- Add Slick Carousel for a responsive slider -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"> <!-- Add AOS library for scroll animations -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css"> <!-- Add SweetAlert2 for custom alert messages -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.css"> <!-- Add Masonry for a responsive grid layout -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> <!-- Add Animate.css for animations -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/6.8.4/swiper-bundle.min.css"> <!-- Add Swiper.js for a responsive slider -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trianglify/3.1.1/trianglify.min.css"> <!-- Add Trianglify for generating SVG backgrounds -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.css"> <!-- Add Rellax for parallax effect -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.css"> <!-- Add Typed.js for typewriter effect -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.css"> <!-- Add particles.js for interactive particle backgrounds -->
-
+  <title>E-Commerce Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <nav>
-      <!-- Navigation menu goes here -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">E-Commerce Website</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">How It Works</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>
-  
+
   <main>
-    <section class="hero">
-      <h1 class="animate__animated animate__fadeIn">Welcome to our Website</h1>
-      <p class="animate__animated animate__fadeIn">Discover a world of online shopping from top websites.</p>
-    </section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <section class="categories-sidebar">
+            <h2 class="section-title">E-Commerce Categories</h2>
+            <ul class="category-list">
+              <li class="category-item" data-filter="all">
+                <i class="fas fa-shopping-bag"></i>
+                All
+              </li>
+              <li class="category-item" data-filter="electronics">
+                <i class="fas fa-laptop"></i>
+                Electronics
+              </li>
+              <li class="category-item" data-filter="fashion">
+                <i class="fas fa-tshirt"></i>
+                Fashion
+              </li>
+              <li class="category-item" data-filter="home">
+                <i class="fas fa-home"></i>
+                Home &amp; Kitchen
+              </li>
+              <li class="category-item" data-filter="books">
+                <i class="fas fa-book"></i>
+                Books
+              </li>
+            </ul>
+          </section>
+        </div>
+        <div class="col-md-9">
+          <section class="hero">
+            <div class="slick-carousel">
+              <div>
+                <h1 class="hero-title">Welcome to our E-Commerce Store</h1>
+                <p class="hero-description">Discover amazing products and shop with confidence</p>
+                <a href="#" class="btn btn-primary">Shop Now</a>
+              </div>
+              <div>
+                <h1 class="hero-title">Find the Best Deals</h1>
+                <p class="hero-description">Explore our wide range of products and save big</p>
+                <a href="#" class="btn btn-primary">Shop Now</a>
+              </div>
+              <div>
+                <h1 class="hero-title">Shop with Ease</h1>
+                <p class="hero-description">Enjoy a seamless shopping experience from the comfort of your home</p>
+                <a href="#" class="btn btn-primary">Shop Now</a>
+              </div>
+            </div>
+          </section>
 
-    <section class="sidebar">
-      <div class="search-container">
-        <input type="text" class="search-input" placeholder="Search...">
+          <section class="products">
+            <h2 class="section-title">Indian E-Commerce Websites</h2>
+            <div class="row">
+              <div class="col-md-4 product-item electronics">
+                <div class="product-card">
+                  <img src="https://via.placeholder.com/300x400" alt="Website Logo" class="img-fluid">
+                  <h3 class="product-name">Flipkart</h3>
+                  <p class="product-description">One-stop destination for all your shopping needs.</p>
+                  <a href="#" class="btn btn-primary btn-sm">Visit Website</a>
+                </div>
+              </div>
+              <div class="col-md-4 product-item fashion">
+                <div class="product-card">
+                  <img src="https://via.placeholder.com/300x400" alt="Website Logo" class="img-fluid">
+                  <h3 class="product-name">Myntra</h3>
+                  <p class="product-description">Fashion that defines you.</p>
+                  <a href="#" class="btn btn-primary btn-sm">Visit Website</a>
+                </div>
+              </div>
+              <div class="col-md-4 product-item home">
+                <div class="product-card">
+                  <img src="https://via.placeholder.com/300x400" alt="Website Logo" class="img-fluid">
+                  <h3 class="product-name">Pepperfry</h3>
+                  <p class="product-description">Furniture and home decor online.</p>
+                  <a href="#" class="btn btn-primary btn-sm">Visit Website</a>
+                </div>
+              </div>
+              <div class="col-md-4 product-item books">
+                <div class="product-card">
+                  <img src="https://via.placeholder.com/300x400" alt="Website Logo" class="img-fluid">
+                  <h3 class="product-name">Amazon</h3>
+                  <p class="product-description">The world's largest online marketplace.</p>
+                  <a href="#" class="btn btn-primary btn-sm">Visit Website</a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
-    </section>
-
-    <section class="website-grid">
-      <div class="website-item">
-        <a href="product/amazon.html"> <!-- Add the link to the product page -->
-          <img src="https://m.media-amazon.com/images/G/31/social_share/amazon_logo._CB633266945_.png" alt="Amazon Logo">
-          <h3>Amazon</h3>
-        </a>
-      </div>
-      <div class="website-item">
-        <img src="https://logos-world.net/wp-content/uploads/2020/11/Flipkart-Emblem.png" alt="Flipkart Logo">
-        <h3>Flipkart</h3>
-      </div>
-      <div class="website-item">
-        <img src="https://images.glints.com/unsafe/720x0/glints-dashboard.s3.amazonaws.com/company-logo/b8bac56e07c20424df6fa3ad8ae1bb4d.png" alt="Meesho Logo">
-        <h3>Meesho</h3>
-      </div>
-      <div class="website-item">
-        <img src="https://play-lh.googleusercontent.com/wpnNPYIrdHC3Q_bcFXGpwoMvFvvvQnZJHmFKzumq5ZTRZKIzfxURAUGOMqhPhVxnggY" alt="Myntra Logo">
-        <h3>Myntra</h3>
-      </div>
-      <div class="website-item">
-        <img src="https://cdn.gadgets360.com/pricee/assets/store/Ajio-1200x800.png" alt="Ajio Logo">
-        <h3>Ajio</h3>
-      </div>
-      <div class="website-item">
-        <img src="https://logos-download.com/wp-content/uploads/2021/01/Nykaa_Logo.png" alt="Nykaa Fashion Logo">
-        <h3>Nykaa Fashion</h3>
-      </div>
-      <div class="website-item">
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Tata_Cliq_logo.svg/1200px-Tata_Cliq_logo.svg.png" alt="Tata Cliq Logo">
-        <h3>Tata Cliq</h3>
-      </div>
-      <div class="website-item">
-        <img src="https://play-lh.googleusercontent.com/-UPqVoSxCKPdC2wT4nuZXUW7Lo7p07Ee4kF5Ak1zTSCzMbQY0OjqJL4DUJdTLtbfv5s" alt="Paytm Mall Logo">
-        <h3>Paytm Mall</h3>
-      </div>
-      <div class="website-item">
-        <img src="https://media.licdn.com/dms/image/C4D0BAQEsGZdkXQVwQw/company-logo_200_200/0/1636701817257?e=2147483647&v=beta&t=bBpxrhPQ0VC31fO7DL1V4_dkSLiY_SYH86qU-ejge5w" alt="ShopClues Logo">
-        <h3>ShopClues</h3>
-      </div>
-      <div class="website-item">
-        <img src="https://play-lh.googleusercontent.com/Bf3L2nJQM7VeApvGOWGW8M4cMOA4280gnlQq_3H5ASWgXDZRuAiB_7GWpuCy8F6NbA" alt="Limeroad Logo">
-        <h3>Limeroad</h3>
-      </div>
-      <div class="website-item">
-        <img src="https://cdn.fcglcdn.com/brainbees/images/m/fc-logo.png" alt="FirstCry Logo">
-        <h3>FirstCry</h3>
-      </div>
-      <div class="website-item">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Club_Factory_Logo.jpg" alt="Club Factory Logo">
-        <h3>Club Factory</h3>
-      </div>
-      <div class="website-item">
-        <img src="https://play-lh.googleusercontent.com/PEDwQhj0Z-33kdQMYwil1ZbIzvk5ObQ1gJ18zK4eYVnIujPshQwojjjLKvA-o4_umbs" alt="Voonik Logo">
-        <h3>Voonik</h3>
-      </div>
-      <div class="website-item">
-        <img src="https://www.punekarnews.in/wp-content/uploads/2020/02/Logo-Snapdeal.png" alt="Snapdeal Logo">
-        <h3>Snapdeal</h3>
-      </div>
-    </section>
+    </div>
   </main>
 
-  <!-- Add any additional scripts or libraries here -->
+  <footer class="bg-dark text-white text-center p-3">
+    <p>&copy; 2023 E-Commerce Website. All rights reserved.</p>
+  </footer>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script> <!-- Add Slick Carousel for a responsive slider -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script> <!-- Add AOS library for scroll animations -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script> <!-- Add SweetAlert2 for custom alert messages -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script> <!-- Add Masonry for a responsive grid layout -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script> <!-- Add WOW.js for on-scroll animations -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js"></script> <!-- Add Lottie animations for interactive animations -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollreveal/4.1.4/scrollreveal.min.js"></script> <!-- Add ScrollReveal for revealing elements on scroll -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.min.js"></script> <!-- Add Scrollify for smooth scrolling -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/isotope/3.0.6/isotope.pkgd.min.js"></script> <!-- Add Isotope for filtering and sorting items -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.5/vivus.min.js"></script> <!-- Add Vivus.js for SVG animations -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/swiper/6.8.4/swiper-bundle.min.js"></script> <!-- Add Swiper.js for a responsive slider -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/3.1.1/trianglify.min.js"></script> <!-- Add Trianglify for generating SVG backgrounds -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script> <!-- Add Rellax for parallax effect -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script> <!-- Add Typed.js for typewriter effect -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script> <!-- Add particles.js for interactive particle backgrounds -->
-  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.slick-carousel').slick({
+        dots: true,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
+      });
+
+      $('.category-item').on('click', function() {
+        $('.category-item').removeClass('active');
+        $(this).addClass('active');
+
+        var filterValue = $(this).data('filter');
+        if (filterValue === 'all') {
+          $('.product-item').fadeIn();
+        } else {
+          $('.product-item').fadeOut();
+          $('.' + filterValue).fadeIn();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
