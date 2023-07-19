@@ -9,10 +9,92 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Custom styles for UI */
+    body {
+      background-color: #f7f7f7;
+    }
+
+    .navbar {
+      background-color: #5900b3;
+      border-bottom: 2px solid #000000;
+    }
+
+    .categories-sidebar {
+      background-color: #f2f2f2;
+      border-right: 2px solid #000000;
+      padding-top: 20px;
+      height: 100%;
+    }
+
+    .category-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .category-item {
+      font-size: 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .category-item:hover {
+      background-color: #e6e6e6;
+    }
+
+    .category-item.active {
+      background-color: #ffffff;
+      color: #5900b3;
+    }
+
+    .product-card {
+      background-color: #ffffff;
+      border: 1px solid #dcdcdc;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-name {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    .product-description {
+      color: #666666;
+    }
+
+    .btn-primary {
+      background-color: #5900b3;
+      border: none;
+      font-size: 16px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: #ffffff;
+      text-decoration: none;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .btn-primary:hover {
+      background-color: #4d008f;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: #5900b3;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
         <a class="navbar-brand" href="#">E-Commerce Website</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +120,7 @@
           <section class="categories-sidebar">
             <h2 class="section-title">E-Commerce Categories</h2>
             <ul class="category-list">
-              <li class="category-item" data-filter="all">
+              <li class="category-item active" data-filter="all">
                 <i class="fas fa-shopping-bag"></i>
                 All
               </li>
@@ -67,17 +149,14 @@
               <div>
                 <h1 class="hero-title">Welcome to our E-Commerce Store</h1>
                 <p class="hero-description">Discover amazing products and shop with confidence</p>
-                <a href="#" class="btn btn-primary">Shop Now</a>
               </div>
               <div>
                 <h1 class="hero-title">Find the Best Deals</h1>
                 <p class="hero-description">Explore our wide range of products and save big</p>
-                <a href="#" class="btn btn-primary">Shop Now</a>
               </div>
               <div>
                 <h1 class="hero-title">Shop with Ease</h1>
                 <p class="hero-description">Enjoy a seamless shopping experience from the comfort of your home</p>
-                <a href="#" class="btn btn-primary">Shop Now</a>
               </div>
             </div>
           </section>
@@ -85,38 +164,34 @@
           <section class="products">
             <h2 class="section-title">Indian E-Commerce Websites</h2>
             <div class="row">
-              <div class="col-md-4 product-item electronics">
+              <a href="https://www.flipkart.com" target="_blank" class="col-md-4 product-item electronics">
                 <div class="product-card">
-                  <img src="https://via.placeholder.com/300x400" alt="Website Logo" class="img-fluid">
+                  <img src="https://via.placeholder.com/300x400" alt="Flipkart" class="img-fluid">
                   <h3 class="product-name">Flipkart</h3>
                   <p class="product-description">One-stop destination for all your shopping needs.</p>
-                  <a href="#" class="btn btn-primary btn-sm">Visit Website</a>
                 </div>
-              </div>
-              <div class="col-md-4 product-item fashion">
+              </a>
+              <a href="https://www.myntra.com" target="_blank" class="col-md-4 product-item fashion">
                 <div class="product-card">
-                  <img src="https://via.placeholder.com/300x400" alt="Website Logo" class="img-fluid">
+                  <img src="https://via.placeholder.com/300x400" alt="Myntra" class="img-fluid">
                   <h3 class="product-name">Myntra</h3>
                   <p class="product-description">Fashion that defines you.</p>
-                  <a href="#" class="btn btn-primary btn-sm">Visit Website</a>
                 </div>
-              </div>
-              <div class="col-md-4 product-item home">
+              </a>
+              <a href="https://www.pepperfry.com" target="_blank" class="col-md-4 product-item home">
                 <div class="product-card">
-                  <img src="https://via.placeholder.com/300x400" alt="Website Logo" class="img-fluid">
+                  <img src="https://via.placeholder.com/300x400" alt="Pepperfry" class="img-fluid">
                   <h3 class="product-name">Pepperfry</h3>
                   <p class="product-description">Furniture and home decor online.</p>
-                  <a href="#" class="btn btn-primary btn-sm">Visit Website</a>
                 </div>
-              </div>
-              <div class="col-md-4 product-item books">
+              </a>
+              <a href="https://www.amazon.in" target="_blank" class="col-md-4 product-item books">
                 <div class="product-card">
-                  <img src="https://via.placeholder.com/300x400" alt="Website Logo" class="img-fluid">
+                  <img src="https://via.placeholder.com/300x400" alt="Amazon" class="img-fluid">
                   <h3 class="product-name">Amazon</h3>
                   <p class="product-description">The world's largest online marketplace.</p>
-                  <a href="#" class="btn btn-primary btn-sm">Visit Website</a>
                 </div>
-              </div>
+              </a>
             </div>
           </section>
         </div>
@@ -124,7 +199,7 @@
     </div>
   </main>
 
-  <footer class="bg-dark text-white text-center p-3">
+  <footer class="bg-primary text-white text-center p-3">
     <p>&copy; 2023 E-Commerce Website. All rights reserved.</p>
   </footer>
 
