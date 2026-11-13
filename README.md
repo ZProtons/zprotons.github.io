@@ -12,4 +12,4 @@ A small, responsive static website built with plain HTML, CSS, and JavaScript fo
 
 For a profile URL such as `https://zprotons.github.io/`, the repository should be named `ZProtons.github.io`. A regular repository can also publish as a project site under `https://zprotons.github.io/<repository>/`.
 
-The resume link expects `Zayed_Feroz_Kazi_Resume.pdf` to remain alongside `index.html` in the repository root. The Certifications link opens the separate `certifications.html` page, which previews each archived page from `certs/certs.pdf`.
+The resume link expects `Zayed_Feroz_Kazi_Resume.pdf` to remain alongside `index.html` in the repository root. The Certifications link opens the separate `certifications.html` page, where each certificate card opens its own single-page PDF from `certs/cert-01.pdf` … `certs/cert-17.pdf`; the hero button still opens the full combined `certs/certs.pdf`.
