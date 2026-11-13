@@ -124,45 +124,42 @@ h1, h2 { color: var(--navy); }
   --spot-x: 50%;
   --spot-y: 50%;
 }
-.name-original, .name-message { grid-area: 1 / 1; }
-.name-original { position: relative; z-index: 1; transition: color .18s ease; }
-.name-darkness {
-  position: absolute;
-  z-index: 2;
-  inset: -.06em -.12em;
-  background: #02060b;
-  box-shadow: 0 0 0 100vmax rgba(2, 6, 11, .94);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .2s ease;
-}
-.name-message {
-  position: relative;
-  z-index: 3;
+.name-original, .name-message-base, .name-message-glow { grid-area: 1 / 1; }
+.name-original { position: relative; z-index: 1; transition: opacity .16s ease; }
+.name-message-base, .name-message-glow {
   align-self: center;
-  color: transparent;
-  background: linear-gradient(105deg, #fff9e9 5%, #d7bd81 50%, #9bc3ba 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
   font-size: .66em;
   letter-spacing: -.045em;
   line-height: 1.08;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  -webkit-mask-image: radial-gradient(circle 0 at var(--spot-x) var(--spot-y), #000 0%, transparent 100%);
-  mask-image: radial-gradient(circle 0 at var(--spot-x) var(--spot-y), #000 0%, transparent 100%);
+  transition: opacity .16s ease;
+}
+.name-message-base { position: relative; z-index: 2; color: var(--navy); }
+.name-lens {
+  position: absolute;
+  z-index: 3;
+  inset: -.08em -.12em;
+  border-radius: 50%;
+  background: radial-gradient(circle 2.4rem at var(--spot-x) var(--spot-y), rgba(9, 46, 77, .94) 0 48%, rgba(9, 46, 77, .4) 75%, transparent 100%);
+  opacity: 0;
+  pointer-events: none;
   transition: opacity .12s ease;
 }
-@media (hover: hover) and (pointer: fine) {
-  .name-flashlight { cursor: crosshair; }
-  .name-flashlight:hover .name-original { color: transparent; }
-  .name-flashlight:hover .name-darkness, .name-flashlight:hover .name-message { opacity: 1; }
-  .name-flashlight:hover .name-message {
-    -webkit-mask-image: radial-gradient(circle 6.5rem at var(--spot-x) var(--spot-y), #000 0 54%, transparent 100%);
-    mask-image: radial-gradient(circle 6.5rem at var(--spot-x) var(--spot-y), #000 0 54%, transparent 100%);
-  }
+.name-message-glow {
+  position: relative;
+  z-index: 4;
+  color: transparent;
+  background: linear-gradient(105deg, #fff9e9 5%, #d7bd81 48%, #9bc3ba 96%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-mask-image: radial-gradient(circle 2.8rem at var(--spot-x) var(--spot-y), #000 0 52%, transparent 100%);
+  mask-image: radial-gradient(circle 2.8rem at var(--spot-x) var(--spot-y), #000 0 52%, transparent 100%);
 }
+.name-flashlight:hover .name-original { opacity: 0; }
+.name-flashlight:hover .name-message-base, .name-flashlight:hover .name-lens, .name-flashlight:hover .name-message-glow { opacity: 1; }
+@media (hover: hover) and (pointer: fine) { .name-flashlight:hover { cursor: none; } }
 .hero-lede {
   max-width: 620px;
   margin-bottom: .9rem;
@@ -346,7 +343,7 @@ h2 em { color: var(--teal); font-weight: 400; }
   .hero { grid-template-columns: 1fr; gap: 2rem; padding-block: 4rem 2.8rem; }
   .hero-copy { padding: 0; }
   .hero h1 { font-size: clamp(3.2rem, 15vw, 5.3rem); }
-  .name-message { font-size: .49em; }
+  .name-message-base, .name-message-glow { font-size: .49em; }
   .hero-card { width: min(100%, 390px); min-height: 390px; justify-self: center; }
   .rosette { width: 180px; margin-top: 1.5rem; }
   .content-section { grid-template-columns: 1fr; gap: .9rem; padding-block: 3.4rem; }

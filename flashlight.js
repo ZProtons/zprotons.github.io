@@ -3,7 +3,6 @@
   if (!name) return;
 
   const moveSpotlight = (event) => {
-    if (event.pointerType === "touch") return;
     const bounds = name.getBoundingClientRect();
     name.style.setProperty("--spot-x", `${event.clientX - bounds.left}px`);
     name.style.setProperty("--spot-y", `${event.clientY - bounds.top}px`);
