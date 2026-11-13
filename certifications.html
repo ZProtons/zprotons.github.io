@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f4f1e8">
-    <meta name="description" content="Certifications and verified credentials earned by Zayed Feroz Kazi.">
-    <meta property="og:title" content="Certifications — Zayed Feroz Kazi">
-    <meta property="og:description" content="A record of certifications and learning milestones.">
+    <meta name="description" content="A browsable archive of Zayed Feroz Kazi's certificates, academic awards, and learning milestones.">
+    <meta property="og:title" content="Certificates & learning archive — Zayed Feroz Kazi">
+    <meta property="og:description" content="Browse certificates by approximate age, subject, and issuing organization.">
     <meta property="og:type" content="website">
-    <title>Certifications — Zayed Feroz Kazi</title>
+    <title>Certificates & learning archive — Zayed Feroz Kazi</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20261113-4">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -32,29 +32,350 @@
 
     <main class="cert-page" id="main">
       <section class="cert-page-hero section-wrap" aria-labelledby="cert-page-title">
-        <div class="section-label"><span class="section-number">01</span><span>Credentials</span></div>
+        <div class="section-label"><span class="section-number">01</span><span>Learning record</span></div>
         <div class="cert-page-copy">
           <a class="cert-back-link" href="index.html"><span aria-hidden="true">←</span> Back to the portfolio</a>
-          <p class="eyebrow">Learning milestones</p>
-          <h1 id="cert-page-title">Certifications <em>& credentials</em></h1>
-          <p class="cert-intro">A dedicated record of formal learning and verified credentials. As I earn certifications, I’ll add the issuer, date, and verification details here.</p>
+          <p class="eyebrow">Certificates & credentials</p>
+          <h1 id="cert-page-title">A record of<br><em>steady learning.</em></h1>
+          <p class="cert-intro">This archive brings together 17 certificates, awards, and participation records from school, competitions, and community events. I’m focused on cybersecurity; these records show the wider foundations I’ve built along the way.</p>
+          <div class="cert-focus-note">
+            <span class="cert-focus-mark" aria-hidden="true">✳</span>
+            <div>
+              <span class="cert-focus-label">Current direction · Cybersecurity</span>
+              <p>There are no cybersecurity-specific certifications in this archive yet. Computing, science, and problem-solving records are grouped separately below.</p>
+            </div>
+            <a class="button button-primary cert-download" href="certs/certs.pdf" target="_blank" rel="noopener">Open all 17 pages <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
       </section>
 
       <section class="cert-list-section section-wrap" aria-labelledby="cert-list-title">
-        <div class="section-label"><span class="section-number">02</span><span>Record</span></div>
+        <div class="section-label"><span class="section-number">02</span><span>Browse</span></div>
         <div class="cert-list-content">
           <div class="cert-section-heading">
-            <h2 id="cert-list-title">Current credentials</h2>
-            <span class="count-pill">0 listed</span>
+            <div>
+              <p class="eyebrow">A page for every record</p>
+              <h2 id="cert-list-title">Certificates & milestones</h2>
+            </div>
+            <span class="count-pill">17 records</span>
           </div>
-          <div class="empty-state">
+
+          <form class="cert-filters" id="cert-filters" role="search" aria-label="Filter certificates">
+            <label class="cert-search-field" for="cert-search">
+              <span>Search</span>
+              <input id="cert-search" name="search" type="search" placeholder="Title, subject, issuer…" autocomplete="off">
+            </label>
+            <label for="age-filter">
+              <span>Approx. age earned</span>
+              <select id="age-filter" name="age">
+                <option value="">All ages</option>
+                <option value="under-13">Under 13</option>
+                <option value="13-17">13–17</option>
+                <option value="18-plus">18+ (none yet)</option>
+              </select>
+            </label>
+            <label for="genre-filter">
+              <span>Genre</span>
+              <select id="genre-filter" name="genre">
+                <option value="">All genres</option>
+                <option value="cybersecurity">Cybersecurity & IT (none yet)</option>
+                <option value="computing">Technology & computing</option>
+                <option value="stem">STEM & science</option>
+                <option value="academic">Academic & learning</option>
+                <option value="competition">Competitions & awards</option>
+                <option value="community">Community & service</option>
+                <option value="sports">Sports & participation</option>
+              </select>
+            </label>
+            <label for="issuer-filter">
+              <span>Issuer</span>
+              <select id="issuer-filter" name="issuer">
+                <option value="">All issuers</option>
+                <option value="acer">Australian Council for Educational Research (ACER)</option>
+                <option value="adis">Abu Dhabi Indian School · Al Wathba</option>
+                <option value="byjus">BYJU'S · Asianet Middle East</option>
+                <option value="cisce">Council for the Indian School Certificate Examinations</option>
+                <option value="dunes">Dunes International School</option>
+                <option value="environment">Environment Agency · Abu Dhabi</option>
+                <option value="giis">Global Indian International School · Abu Dhabi</option>
+                <option value="nahtam">Nahtam</option>
+                <option value="nof">National Olympiad Foundation</option>
+                <option value="pearl-drop">Pearl Drop School</option>
+                <option value="sakal">Sakal Schoolympics</option>
+                <option value="science-india">Science India Forum · Vijnana Bharati</option>
+                <option value="terry-fox">Terry Fox Foundation</option>
+                <option value="uae-karate">UAE Karate Federation</option>
+              </select>
+            </label>
+            <button class="cert-reset" type="reset">Clear filters <span aria-hidden="true">↺</span></button>
+          </form>
+          <p class="cert-filter-note" id="cert-filter-note">Age bands are approximate; several certificates list only a year or school session.</p>
+          <p class="cert-results" id="cert-results" role="status" aria-live="polite">Showing 17 of 17 records</p>
+
+          <div class="cert-grid" id="cert-grid">
+            <article class="cert-card" data-age="13-17" data-genre="competition" data-issuer="pearl-drop" data-search="english debate competition winning team pearl drop school language communication achievement">
+              <a class="cert-preview" href="certs/certs.pdf#page=1" target="_blank" rel="noopener" aria-label="Open certificate page 1: English debate competition">
+                <img src="assets/certificates/cert-01.jpg" alt="Scanned certificate for the English debate competition" loading="lazy" decoding="async">
+                <span class="cert-preview-page">PAGE 01</span><span class="cert-preview-open" aria-hidden="true">↗</span>
+              </a>
+              <div class="cert-card-content">
+                <div class="cert-card-topline"><span>01 · ACHIEVEMENT</span><time datetime="2022">2022</time></div>
+                <h3>English Debate Competition</h3>
+                <p class="cert-card-detail">Winning team · English debate</p>
+                <div class="cert-card-tags"><span>Competition & strategy</span><span class="age-tag">13–17</span></div>
+                <p class="cert-card-issuer"><span>Issuer</span><strong>Pearl Drop School</strong></p>
+                <a class="cert-page-link" href="certs/certs.pdf#page=1" target="_blank" rel="noopener">View certificate page <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="cert-card" data-age="under-13" data-genre="stem" data-issuer="nof" data-search="international mathematics qualifier national olympiad foundation class rank 5 international rank 1856">
+              <a class="cert-preview" href="certs/certs.pdf#page=2" target="_blank" rel="noopener" aria-label="Open certificate page 2: International Mathematics Qualifier">
+                <img src="assets/certificates/cert-02.jpg" alt="National Olympiad Foundation International Mathematics Qualifier certificate" loading="lazy" decoding="async">
+                <span class="cert-preview-page">PAGE 02</span><span class="cert-preview-open" aria-hidden="true">↗</span>
+              </a>
+              <div class="cert-card-content">
+                <div class="cert-card-topline"><span>02 · PARTICIPATION</span><time datetime="2017">2016–17</time></div>
+                <h3>International Mathematics Qualifier</h3>
+                <p class="cert-card-detail">International Olympiads · class rank 5</p>
+                <div class="cert-card-tags"><span>STEM & science</span><span class="age-tag">Under 13</span></div>
+                <p class="cert-card-issuer"><span>Issuer</span><strong>National Olympiad Foundation</strong></p>
+                <a class="cert-page-link" href="certs/certs.pdf#page=2" target="_blank" rel="noopener">View certificate page <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="cert-card" data-age="13-17" data-genre="computing" data-issuer="cisce" data-search="certificate of merit computer applications indian certificate of secondary education class 10 cisce">
+              <a class="cert-preview" href="certs/certs.pdf#page=3" target="_blank" rel="noopener" aria-label="Open certificate page 3: ICSE Certificate of Merit in Computer Applications">
+                <img src="assets/certificates/cert-03.jpg" alt="CISCE Certificate of Merit for Computer Applications" loading="lazy" decoding="async">
+                <span class="cert-preview-page">PAGE 03</span><span class="cert-preview-open" aria-hidden="true">↗</span>
+              </a>
+              <div class="cert-card-content">
+                <div class="cert-card-topline"><span>03 · MERIT</span><time datetime="2024">2024</time></div>
+                <h3>ICSE Merit · Computer Applications</h3>
+                <p class="cert-card-detail">Class X examination · academic distinction</p>
+                <div class="cert-card-tags"><span>Technology & computing</span><span class="age-tag">13–17</span></div>
+                <p class="cert-card-issuer"><span>Issuer</span><strong>CISCE</strong></p>
+                <a class="cert-page-link" href="certs/certs.pdf#page=3" target="_blank" rel="noopener">View certificate page <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="cert-card" data-age="under-13" data-genre="community" data-issuer="adis" data-search="heritage museum contribution certificate appreciation abu dhabi indian school al wathba">
+              <a class="cert-preview" href="certs/certs.pdf#page=4" target="_blank" rel="noopener" aria-label="Open certificate page 4: Heritage Museum contribution">
+                <img src="assets/certificates/cert-04.jpg" alt="Abu Dhabi Indian School certificate of appreciation for Heritage Museum contribution" loading="lazy" decoding="async">
+                <span class="cert-preview-page">PAGE 04</span><span class="cert-preview-open" aria-hidden="true">↗</span>
+              </a>
+              <div class="cert-card-content">
+                <div class="cert-card-topline"><span>04 · APPRECIATION</span><time datetime="2017">2017–18</time></div>
+                <h3>Heritage Museum Contribution</h3>
+                <p class="cert-card-detail">School community contribution</p>
+                <div class="cert-card-tags"><span>Community & service</span><span class="age-tag">Under 13</span></div>
+                <p class="cert-card-issuer"><span>Issuer</span><strong>Abu Dhabi Indian School · Al Wathba</strong></p>
+                <a class="cert-page-link" href="certs/certs.pdf#page=4" target="_blank" rel="noopener">View certificate page <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="cert-card" data-age="under-13" data-genre="computing" data-issuer="giis" data-search="scratch programming competition second position junior al tasamuh global indian international school abu dhabi">
+              <a class="cert-preview" href="certs/certs.pdf#page=5" target="_blank" rel="noopener" aria-label="Open certificate page 5: Second place in the junior Scratch competition">
+                <img src="assets/certificates/cert-05.jpg" alt="Certificate for second place in a junior Scratch competition" loading="lazy" decoding="async">
+                <span class="cert-preview-page">PAGE 05</span><span class="cert-preview-open" aria-hidden="true">↗</span>
+              </a>
+              <div class="cert-card-content">
+                <div class="cert-card-topline"><span>05 · SECOND PLACE</span><time datetime="2018-10-27">2018</time></div>
+                <h3>Junior Scratch Competition</h3>
+                <p class="cert-card-detail">Second position · Al Tasamuh event</p>
+                <div class="cert-card-tags"><span>Technology & computing</span><span class="age-tag">Under 13</span></div>
+                <p class="cert-card-issuer"><span>Host</span><strong>Global Indian International School · Abu Dhabi</strong></p>
+                <a class="cert-page-link" href="certs/certs.pdf#page=5" target="_blank" rel="noopener">View certificate page <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="cert-card" data-age="under-13" data-genre="competition" data-issuer="adis" data-search="inter house chess competition third place under 12 abu dhabi indian school al wathba">
+              <a class="cert-preview" href="certs/certs.pdf#page=6" target="_blank" rel="noopener" aria-label="Open certificate page 6: Third place in the under-12 inter-house chess competition">
+                <img src="assets/certificates/cert-06.jpg" alt="Abu Dhabi Indian School certificate for third place in an under-12 chess competition" loading="lazy" decoding="async">
+                <span class="cert-preview-page">PAGE 06</span><span class="cert-preview-open" aria-hidden="true">↗</span>
+              </a>
+              <div class="cert-card-content">
+                <div class="cert-card-topline"><span>06 · THIRD PLACE</span><time datetime="2018">2018–19</time></div>
+                <h3>Inter-house Chess Competition</h3>
+                <p class="cert-card-detail">Third place · under-12 category</p>
+                <div class="cert-card-tags"><span>Competition & strategy</span><span class="age-tag">Under 13</span></div>
+                <p class="cert-card-issuer"><span>Issuer</span><strong>Abu Dhabi Indian School · Al Wathba</strong></p>
+                <a class="cert-page-link" href="certs/certs.pdf#page=6" target="_blank" rel="noopener">View certificate page <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="cert-card" data-age="under-13" data-genre="stem" data-issuer="acer" data-search="science international benchmark tests high distinction middle east acer australian council educational research">
+              <a class="cert-preview" href="certs/certs.pdf#page=7" target="_blank" rel="noopener" aria-label="Open certificate page 7: High Distinction in Science International Benchmark Tests">
+                <img src="assets/certificates/cert-07.jpg" alt="ACER High Distinction certificate in Science International Benchmark Tests" loading="lazy" decoding="async">
+                <span class="cert-preview-page">PAGE 07</span><span class="cert-preview-open" aria-hidden="true">↗</span>
+              </a>
+              <div class="cert-card-content">
+                <div class="cert-card-topline"><span>07 · HIGH DISTINCTION</span><time datetime="2018-11">NOV 2018</time></div>
+                <h3>Science Benchmark Tests</h3>
+                <p class="cert-card-detail">High Distinction · Middle East</p>
+                <div class="cert-card-tags"><span>STEM & science</span><span class="age-tag">Under 13</span></div>
+                <p class="cert-card-issuer"><span>Issuer</span><strong>Australian Council for Educational Research</strong></p>
+                <a class="cert-page-link" href="certs/certs.pdf#page=7" target="_blank" rel="noopener">View certificate page <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="cert-card" data-age="under-13" data-genre="sports" data-issuer="uae-karate" data-search="most people performing kata world record attempt uae national day karate federation participation">
+              <a class="cert-preview" href="certs/certs.pdf#page=8" target="_blank" rel="noopener" aria-label="Open certificate page 8: Most People Performing KATA record attempt">
+                <img src="assets/certificates/cert-08.jpg" alt="UAE Karate Federation certificate of appreciation for participating in a KATA record attempt" loading="lazy" decoding="async">
+                <span class="cert-preview-page">PAGE 08</span><span class="cert-preview-open" aria-hidden="true">↗</span>
+              </a>
+              <div class="cert-card-content">
+                <div class="cert-card-topline"><span>08 · PARTICIPATION</span><time datetime="2017-02-16">2017</time></div>
+                <h3>“Most People Performing KATA”</h3>
+                <p class="cert-card-detail">UAE National Day record attempt · Dubai</p>
+                <div class="cert-card-tags"><span>Sports & participation</span><span class="age-tag">Under 13</span></div>
+                <p class="cert-card-issuer"><span>Issuer</span><strong>UAE Karate Federation</strong></p>
+                <a class="cert-page-link" href="certs/certs.pdf#page=8" target="_blank" rel="noopener">View certificate page <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="cert-card" data-age="under-13" data-genre="stem" data-issuer="adis" data-search="innovative science projects first position abu dhabi indian school al wathba">
+              <a class="cert-preview" href="certs/certs.pdf#page=9" target="_blank" rel="noopener" aria-label="Open certificate page 9: First place for an Innovative Science Project">
+                <img src="assets/certificates/cert-09.jpg" alt="Abu Dhabi Indian School certificate for first place in Innovative Science Projects" loading="lazy" decoding="async">
+                <span class="cert-preview-page">PAGE 09</span><span class="cert-preview-open" aria-hidden="true">↗</span>
+              </a>
+              <div class="cert-card-content">
+                <div class="cert-card-topline"><span>09 · FIRST PLACE</span><time datetime="2019-01-28">2019</time></div>
+                <h3>Innovative Science Projects</h3>
+                <p class="cert-card-detail">First position · school competition</p>
+                <div class="cert-card-tags"><span>STEM & science</span><span class="age-tag">Under 13</span></div>
+                <p class="cert-card-issuer"><span>Issuer</span><strong>Abu Dhabi Indian School · Al Wathba</strong></p>
+                <a class="cert-page-link" href="certs/certs.pdf#page=9" target="_blank" rel="noopener">View certificate page <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="cert-card" data-age="under-13" data-genre="academic" data-issuer="dunes" data-search="project designing sub senior category inter school islamic fest dunes international school merit">
+              <a class="cert-preview" href="certs/certs.pdf#page=10" target="_blank" rel="noopener" aria-label="Open certificate page 10: Project Designing merit">
+                <img src="assets/certificates/cert-10.jpg" alt="Dunes International School Certificate of Merit for Project Designing" loading="lazy" decoding="async">
+                <span class="cert-preview-page">PAGE 10</span><span class="cert-preview-open" aria-hidden="true">↗</span>
+              </a>
+              <div class="cert-card-content">
+                <div class="cert-card-topline"><span>10 · MERIT</span><time datetime="2019-05-20">2019</time></div>
+                <h3>Project Designing</h3>
+                <p class="cert-card-detail">Sub-senior category · Inter-school Islamic Fest</p>
+                <div class="cert-card-tags"><span>Academic & learning</span><span class="age-tag">Under 13</span></div>
+                <p class="cert-card-issuer"><span>Issuer</span><strong>Dunes International School</strong></p>
+                <a class="cert-page-link" href="certs/certs.pdf#page=10" target="_blank" rel="noopener">View certificate page <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="cert-card" data-age="under-13" data-genre="stem" data-issuer="science-india" data-search="sastra pratibha contest 2018 sub junior science india forum vijnana bharati consulate general of india dubai">
+              <a class="cert-preview" href="certs/certs.pdf#page=11" target="_blank" rel="noopener" aria-label="Open certificate page 11: Sastra Pratibha Contest 2018">
+                <img src="assets/certificates/cert-11.jpg" alt="Certificate of participation in the Sastra Pratibha Contest 2018" loading="lazy" decoding="async">
+                <span class="cert-preview-page">PAGE 11</span><span class="cert-preview-open" aria-hidden="true">↗</span>
+              </a>
+              <div class="cert-card-content">
+                <div class="cert-card-topline"><span>11 · PARTICIPATION</span><time datetime="2019-02-16">2019</time></div>
+                <h3>Sastra Pratibha Contest</h3>
+                <p class="cert-card-detail">Sub-junior category · 2018 contest</p>
+                <div class="cert-card-tags"><span>STEM & science</span><span class="age-tag">Under 13</span></div>
+                <p class="cert-card-issuer"><span>Issuer</span><strong>Science India Forum · Vijnana Bharati</strong></p>
+                <a class="cert-page-link" href="certs/certs.pdf#page=11" target="_blank" rel="noopener">View certificate page <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="cert-card" data-age="under-13" data-genre="community" data-issuer="terry-fox" data-search="terry fox run cancer research participation terry fox foundation 2019">
+              <a class="cert-preview" href="certs/certs.pdf#page=12" target="_blank" rel="noopener" aria-label="Open certificate page 12: Terry Fox Run">
+                <img src="assets/certificates/cert-12.jpg" alt="Terry Fox Foundation certificate for participating in the 2019 Terry Fox Run" loading="lazy" decoding="async">
+                <span class="cert-preview-page">PAGE 12</span><span class="cert-preview-open" aria-hidden="true">↗</span>
+              </a>
+              <div class="cert-card-content">
+                <div class="cert-card-topline"><span>12 · PARTICIPATION</span><time datetime="2019">2019</time></div>
+                <h3>Terry Fox Run</h3>
+                <p class="cert-card-detail">Annual run for cancer research</p>
+                <div class="cert-card-tags"><span>Community & service</span><span class="age-tag">Under 13</span></div>
+                <p class="cert-card-issuer"><span>Issuer</span><strong>Terry Fox Foundation</strong></p>
+                <a class="cert-page-link" href="certs/certs.pdf#page=12" target="_blank" rel="noopener">View certificate page <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="cert-card" data-age="under-13" data-genre="academic" data-issuer="byjus" data-search="think and learn challenge participation byjus asianet middle east grade 4">
+              <a class="cert-preview" href="certs/certs.pdf#page=13" target="_blank" rel="noopener" aria-label="Open certificate page 13: Think and Learn Challenge participation">
+                <img src="assets/certificates/cert-13.jpg" alt="BYJU'S Think and Learn Challenge certificate of participation" loading="lazy" decoding="async">
+                <span class="cert-preview-page">PAGE 13</span><span class="cert-preview-open" aria-hidden="true">↗</span>
+              </a>
+              <div class="cert-card-content">
+                <div class="cert-card-topline"><span>13 · PARTICIPATION</span><time datetime="2018">2017–18</time></div>
+                <h3>Think & Learn Challenge</h3>
+                <p class="cert-card-detail">Participation · Grade 4</p>
+                <div class="cert-card-tags"><span>Academic & learning</span><span class="age-tag">Under 13</span></div>
+                <p class="cert-card-issuer"><span>Issuer</span><strong>BYJU'S · Asianet Middle East</strong></p>
+                <a class="cert-page-link" href="certs/certs.pdf#page=13" target="_blank" rel="noopener">View certificate page <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="cert-card" data-age="under-13" data-genre="stem" data-issuer="environment" data-search="enviro spellathon environment agency abu dhabi shell good grade level one environment">
+              <a class="cert-preview" href="certs/certs.pdf#page=14" target="_blank" rel="noopener" aria-label="Open certificate page 14: Enviro-Spellathon">
+                <img src="assets/certificates/cert-14.jpg" alt="Enviro-Spellathon certificate for a Good Grade at Level One" loading="lazy" decoding="async">
+                <span class="cert-preview-page">PAGE 14</span><span class="cert-preview-open" aria-hidden="true">↗</span>
+              </a>
+              <div class="cert-card-content">
+                <div class="cert-card-topline"><span>14 · GOOD GRADE</span><time datetime="2016">2015–16</time></div>
+                <h3>Enviro-Spellathon</h3>
+                <p class="cert-card-detail">Good Grade · Level One</p>
+                <div class="cert-card-tags"><span>STEM & science</span><span class="age-tag">Under 13</span></div>
+                <p class="cert-card-issuer"><span>Issuer</span><strong>Environment Agency · Abu Dhabi</strong></p>
+                <a class="cert-page-link" href="certs/certs.pdf#page=14" target="_blank" rel="noopener">View certificate page <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="cert-card" data-age="under-13" data-genre="stem" data-issuer="nahtam" data-search="educational planetarium program participation nahtam abu dhabi indian school al wathba">
+              <a class="cert-preview" href="certs/certs.pdf#page=15" target="_blank" rel="noopener" aria-label="Open certificate page 15: Educational Planetarium Program">
+                <img src="assets/certificates/cert-15.jpg" alt="Nahtam certificate for participation in an Educational Planetarium Program" loading="lazy" decoding="async">
+                <span class="cert-preview-page">PAGE 15</span><span class="cert-preview-open" aria-hidden="true">↗</span>
+              </a>
+              <div class="cert-card-content">
+                <div class="cert-card-topline"><span>15 · PARTICIPATION</span><time datetime="2016-11-10">2016</time></div>
+                <h3>Educational Planetarium Program</h3>
+                <p class="cert-card-detail">School program · Abu Dhabi</p>
+                <div class="cert-card-tags"><span>STEM & science</span><span class="age-tag">Under 13</span></div>
+                <p class="cert-card-issuer"><span>Issuer</span><strong>Nahtam</strong></p>
+                <a class="cert-page-link" href="certs/certs.pdf#page=15" target="_blank" rel="noopener">View certificate page <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="cert-card" data-age="under-13" data-genre="academic" data-issuer="byjus" data-search="think and learn challenge certificate excellence qualified national round byjus asianet middle east">
+              <a class="cert-preview" href="certs/certs.pdf#page=16" target="_blank" rel="noopener" aria-label="Open certificate page 16: Think and Learn Challenge Certificate of Excellence">
+                <img src="assets/certificates/cert-16.jpg" alt="BYJU'S Think and Learn Challenge Certificate of Excellence" loading="lazy" decoding="async">
+                <span class="cert-preview-page">PAGE 16</span><span class="cert-preview-open" aria-hidden="true">↗</span>
+              </a>
+              <div class="cert-card-content">
+                <div class="cert-card-topline"><span>16 · EXCELLENCE</span><time datetime="2018">2017–18</time></div>
+                <h3>Think & Learn Challenge</h3>
+                <p class="cert-card-detail">Qualified for the national round · Grade 4</p>
+                <div class="cert-card-tags"><span>Academic & learning</span><span class="age-tag">Under 13</span></div>
+                <p class="cert-card-issuer"><span>Issuer</span><strong>BYJU'S · Asianet Middle East</strong></p>
+                <a class="cert-page-link" href="certs/certs.pdf#page=16" target="_blank" rel="noopener">View certificate page <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="cert-card" data-age="13-17" data-genre="competition" data-issuer="sakal" data-search="sakal schoolympics chess boys 14 16 pearl drop school pune 2023 poonawalla fincorp">
+              <a class="cert-preview" href="certs/certs.pdf#page=17" target="_blank" rel="noopener" aria-label="Open certificate page 17: Sakal Schoolympics chess participation">
+                <img src="assets/certificates/cert-17.jpg" alt="Sakal Schoolympics certificate for chess participation in 2023" loading="lazy" decoding="async">
+                <span class="cert-preview-page">PAGE 17</span><span class="cert-preview-open" aria-hidden="true">↗</span>
+              </a>
+              <div class="cert-card-content">
+                <div class="cert-card-topline"><span>17 · PARTICIPATION</span><time datetime="2023">2023</time></div>
+                <h3>Sakal Schoolympics · Chess</h3>
+                <p class="cert-card-detail">Boys 14–16 category · Pune</p>
+                <div class="cert-card-tags"><span>Competition & strategy</span><span class="age-tag">13–17</span></div>
+                <p class="cert-card-issuer"><span>Organizer</span><strong>Sakal Schoolympics</strong></p>
+                <a class="cert-page-link" href="certs/certs.pdf#page=17" target="_blank" rel="noopener">View certificate page <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+          </div>
+
+          <div class="cert-empty-state" id="cert-empty" hidden>
             <span class="empty-rosette" aria-hidden="true">✳</span>
             <div>
-              <h3>No certifications listed yet.</h3>
-              <p>This page is ready for future certifications and verified credentials.</p>
+              <h3>No records match these filters.</h3>
+              <p>Try a different age group, genre, or issuer.</p>
             </div>
-            <span class="empty-index">01 — 00</span>
+            <button class="cert-empty-reset" type="button">Clear filters</button>
           </div>
         </div>
       </section>
@@ -68,5 +389,6 @@
       <small>© 2026 Zayed Feroz Kazi</small>
       <small class="footer-note">Practical learning · Responsible security</small>
     </footer>
+    <script src="certifications.js?v=20261113-1" defer></script>
   </body>
 </html>
