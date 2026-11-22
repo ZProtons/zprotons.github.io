@@ -152,16 +152,16 @@
             </div>
             <span class="latest-repo-live"><span aria-hidden="true"></span> Live from GitHub</span>
           </div>
-          <article class="latest-repo-card" id="latest-repo-card" aria-live="polite">
-            <div class="latest-repo-mark" aria-hidden="true">GH</div>
-            <div class="latest-repo-copy">
-              <p class="latest-repo-kicker" id="latest-repo-kicker">Loading public repositories…</p>
-              <h3 id="latest-repo-name">Fetching the latest repository</h3>
-              <p id="latest-repo-description">Checking GitHub for the most recently created public repository.</p>
-              <div class="latest-repo-meta" id="latest-repo-meta"></div>
-            </div>
-            <a class="latest-repo-link" id="latest-repo-link" href="https://github.com/ZProtons" target="_blank" rel="noopener">Open on GitHub <span aria-hidden="true">↗</span></a>
-          </article>
+          <div class="latest-repo-list" id="latest-repo-list" aria-live="polite">
+            <article class="latest-repo-card latest-repo-loading">
+              <div class="latest-repo-mark" aria-hidden="true">GH</div>
+              <div class="latest-repo-copy">
+                <p class="latest-repo-kicker">Loading public repositories…</p>
+                <h3>Fetching recently updated projects</h3>
+                <p>Checking GitHub for the three most recently updated public repositories.</p>
+              </div>
+            </article>
+          </div>
           <p class="latest-repo-footnote">Automatically updated from the public repositories on <a href="https://github.com/ZProtons" target="_blank" rel="noopener">github.com/ZProtons</a>.</p>
         </div>
       </section>
