@@ -868,3 +868,50 @@ a:hover { color: var(--teal); }
   .timeline-item { grid-template-columns: 1fr; row-gap: .55rem; }
   .timeline-date { margin-bottom: .15rem; }
 }
+
+
+/* ── Three recently updated repositories ─────────────────────── */
+.latest-repo-list {
+  display: grid;
+  gap: .85rem;
+}
+.latest-repo-list .latest-repo-card {
+  grid-template-columns: 52px minmax(0, 1fr) auto;
+  gap: 1.25rem;
+  padding: 1.35rem 1.5rem;
+  background: rgba(255,255,255,.82);
+  box-shadow: 0 7px 22px rgba(16,45,67,.035);
+}
+.latest-repo-list .latest-repo-mark {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  font-size: .9rem;
+}
+.latest-repo-list .latest-repo-copy h3 {
+  font-size: 1.2rem;
+}
+.latest-repo-list .latest-repo-copy > p:not(.latest-repo-kicker) {
+  font-size: .84rem;
+}
+.latest-repo-list .latest-repo-meta {
+  margin-top: .7rem;
+}
+.latest-repo-list .latest-repo-link {
+  align-self: center;
+}
+@media (max-width: 680px) {
+  .latest-repo-list .latest-repo-card {
+    grid-template-columns: 42px minmax(0,1fr);
+    gap: .85rem;
+    padding: 1rem;
+  }
+  .latest-repo-list .latest-repo-mark {
+    width: 40px;
+    height: 40px;
+  }
+  .latest-repo-list .latest-repo-link {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
