@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f6f5">
+  <meta name="description" content="An AI-assisted, target-aware wordlist generator for ffuf that uses visible target context and optional baseline filtering.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Zayed Feroz Kazi">
+  <meta property="og:title" content="FuzzForge — Zayed Feroz Kazi">
+  <meta property="og:description" content="An AI-assisted, target-aware wordlist generator for ffuf that uses visible target context and optional baseline filtering.">
+  <meta property="og:image" content="https://zprotons.github.io/assets/og-card.svg">
+  <meta property="og:image:alt" content="Zayed Feroz Kazi — Computer Engineering and Cybersecurity">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>FuzzForge — Zayed Feroz Kazi</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css?v=20261123-3">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="nav-shell">
+    <a class="wordmark" href="../index.html#top" aria-label="Zayed Feroz Kazi, home"><span class="wordmark-seal" aria-hidden="true"><span>ZK</span></span><span class="wordmark-name">Zayed Feroz Kazi</span></a>
+    <nav class="main-nav" aria-label="Main navigation"><a href="../index.html#about">About</a><a href="../index.html#work">Work</a><a href="../experience.html">Experience</a><a href="../certifications.html">Certifications</a><a href="../writeups.html">Writing</a></nav>
+  </div></header>
+  <main id="main" class="cert-page">
+    <section class="cert-page-hero section-wrap"><div class="section-label"><span class="section-number">01</span><span>Project record</span></div><div class="cert-page-copy">
+      <a class="cert-back-link" href="../index.html#work">← Back to selected work</a><p class="eyebrow">Security tooling · Python · LLM integration</p><h1>FuzzForge</h1><p class="cert-intro">A command-line utility that generates candidate paths, parameter names, and virtual-host names from a target's visible context, then can optionally run ffuf with baseline-aware filtering.</p>
+      <div class="project-detail-links"><a class="button button-primary" href="https://github.com/ZProtons/fuzzforge" target="_blank" rel="noopener">View repository ↗</a></div>
+    </div></section>
+    <section class="content-section section-wrap"><div class="section-label"><span class="section-number">02</span><span>Problem</span></div><div class="section-content project-detail-content"><h2>Generic wordlists lack target context.</h2><p>Traditional content discovery often starts with broad wordlists that contain many candidates unrelated to the application being tested. FuzzForge takes a different approach: it reads the target homepage and uses available context—such as title, navigation links, visible copy, and response-header technology hints—to generate a shorter, target-aware candidate list.</p></div></section><section class="content-section section-wrap"><div class="section-label"><span class="section-number">03</span><span>Workflow</span></div><div class="section-content project-detail-content"><h2>Context, generation, then optional fuzzing.</h2><ol class="detail-steps"><li>Fetch the authorised target homepage and extract visible context.</li><li>Send the context to a configured OpenAI-compatible chat-completions API.</li><li>Generate candidate paths, parameter names, and virtual-host names.</li><li>Write each category to its own output file.</li><li>Optionally invoke ffuf and filter responses using a known-miss baseline.</li></ol><p>It supports hosted and local OpenAI-compatible endpoints through configuration, allowing a local model server to be used.</p></div></section><section class="content-section section-wrap"><div class="section-label"><span class="section-number">04</span><span>Implementation & attribution</span></div><div class="section-content project-detail-content"><h2>AI-assisted development, with explicit direction.</h2><p>The project README credits Claude (Anthropic) for implementation under my instructions. My contribution was directing the tool's purpose and behaviour, reviewing the resulting implementation, and validating it through tests and an end-to-end run against my own fuzzing lab.</p><p>The README records 23 unit tests using a mocked LLM backend and an end-to-end verification with a stub local LLM server and the real ffuf binary. That run exposed several workflow bugs, which were corrected and covered by regression tests.</p></div></section><section class="content-section section-wrap"><div class="section-label"><span class="section-number">05</span><span>Limitations & responsible use</span></div><div class="section-content project-detail-content"><h2>Useful assistance, not a substitute for judgement.</h2><p>FuzzForge's parameter mode fuzzes candidate parameter names while using a fixed value (default <code>1</code>). Applications may depend on a different value, so a negative result does not prove that a parameter is absent or uninteresting.</p><p>Use it only against systems you own or are explicitly authorised to test. Generated candidates are hypotheses to validate, not proof of a vulnerability.</p><p class="detail-note">See the repository README for installation, configuration, command examples, test notes, and current limitations.</p></div></section>
+  </main>
+  <footer class="site-footer section-wrap"><a class="footer-mark" href="../index.html#top" aria-label="Back to portfolio"><span>ZK</span></a><p>Made with care in Pune, India.</p><a class="back-top" href="#main">Back to top ↑</a><span class="footer-line" aria-hidden="true"></span><small>© 2026 Zayed Feroz Kazi</small><small class="footer-note">Practical learning · Responsible security</small></footer>
+</body></html>
